@@ -29,3 +29,4 @@ $ docker rm bludit
 ```
 $ docker rmi pdacity/bludit_docker:latest
 ```
+
