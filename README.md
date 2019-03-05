@@ -1,4 +1,4 @@
-# Bludit Docker Image
+# Bludit Docker Image (Alpine based)
 You can run Bludit as a Docker container.
 
 [![Docker Hub](https://img.shields.io/badge/Docker-Hub-blue.svg)](https://hub.docker.com/r/bludit/docker/)
