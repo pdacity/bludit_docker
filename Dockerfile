@@ -5,7 +5,6 @@ MAINTAINER Dmitry Malinin <dmitry.malinin@gmail.com>
 ENV nginx_conf /etc/nginx/nginx.conf
 ENV php_conf /etc/php5/php.ini
 ENV fpm_conf /etc/php5/php-fpm.conf
-#!#ENV fpm_pool /etc/php5/php-fpm.d/www.conf
 ENV fpm_pool /etc/php5/php-fpm.conf
 
 RUN apk add --no-cache nginx php5-fpm php5-gd php5-json php5-dom php5-xml php5-zip  
@@ -35,10 +34,6 @@ RUN mkdir -p /var/lib/php/session && \
 # Cleaning
 RUN rm -rf /etc/nginx/conf.d/* && \
     rm -rf /var/cache/*
-
-## forward request and error logs to docker log collector
-#RUN ln -sf /dev/stdout /var/log/nginx/access.log
-#RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Configurations files
 ADD conf/default.conf /etc/nginx/conf.d/default.conf
