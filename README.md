@@ -2,9 +2,6 @@
 You can run Bludit as a Docker container. Image based in Alpine Linux 3.7, php 5.6 and latest bludit 3.8.1. 
 
 
-[![Docker Hub](https://img.shields.io/badge/Docker-Hub-blue.svg)](https://hub.docker.com/r/bludit/docker/)
-
-
 ### Run the container
 
 ```
