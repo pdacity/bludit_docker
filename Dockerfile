@@ -1,13 +1,14 @@
-FROM alpine:3.9
+FROM alpine:3.7
 
 MAINTAINER Dmitry Malinin <dmitry.malinin@gmail.com>
 
 ENV nginx_conf /etc/nginx/nginx.conf
-ENV php_conf /etc/php7/php.ini
-ENV fpm_conf /etc/php7/php-fpm.conf
-ENV fpm_pool /etc/php7/php-fpm.d/www.conf
+ENV php_conf /etc/php5/php.ini
+ENV fpm_conf /etc/php5/php-fpm.conf
+#!#ENV fpm_pool /etc/php5/php-fpm.d/www.conf
+ENV fpm_pool /etc/php5/php-fpm.conf
 
-RUN apk add --no-cache nginx php-fpm php-gd php-json php-dom php-xml php-zip php-mbstring 
+RUN apk add --no-cache nginx php5-fpm php5-gd php5-json php5-dom php5-xml php5-zip  
 RUN apk add supervisor unzip jq curl
 
 # Configs files
@@ -28,8 +29,8 @@ RUN sed -i -e "s/listen = 127.0.0.1:9000/listen = \/var\/run\/php-fpm.sock/g" ${
 # Disable run nginx in daemon mode
 RUN echo "daemon off;" >> ${nginx_conf}
 
-RUN mkdir -p /var/lib/php7/session && \
-    chown -R nginx:nginx /var/lib/php7/session
+RUN mkdir -p /var/lib/php/session && \
+    chown -R nginx:nginx /var/lib/php/session
 
 # Cleaning
 RUN rm -rf /etc/nginx/conf.d/* && \
