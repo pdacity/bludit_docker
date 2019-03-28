@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-MAINTAINER Dmitry Malinin <dmitry.malinin@gmail.com>
+MAINTAINER Dmitry Malinin <dmitry@malinin.com>
 
 ENV nginx_conf /etc/nginx/nginx.conf
 ENV php_conf /etc/php5/php.ini
