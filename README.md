@@ -38,8 +38,8 @@ services:
   bludit:
     image: pdacity/bludit_docker
     volumes:
-      - html:/var/www           # Bludit home
-      - nginx:/etc/nginx        #Nginx config
+      - html:/var/www           # Bludit home dir
+      - nginx:/etc/nginx        # Nginx config dir
     restart: always
     cpu_shares: 50
     mem_limit: 64m
