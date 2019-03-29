@@ -28,3 +28,27 @@ $ docker rm bludit
 $ docker rmi pdacity/bludit_docker:latest
 ```
 
+### Start with docker-compose
+
+```
+version: '2.4'
+
+services:
+
+  bludit:
+    image: pdacity/bludit_docker
+    volumes:
+      - html:/var/www           # Bludit home
+      - nginx:/etc/nginx        #Nginx config
+    restart: always
+    cpu_shares: 50
+    mem_limit: 64m
+    memswap_limit: 64m
+
+volumes:
+  html: {}
+  nginx: {}
+
+networks:
+  default:
+```
