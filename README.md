@@ -1,5 +1,5 @@
 # Bludit Docker Image (Alpine based)
-You can run Bludit as a Docker container. Image based in Alpine Linux 3.7, php 5.6 and latest bludit 3.8.1. 
+You can run Bludit as a Docker container. Image based in Alpine Linux 3.7, php 5.6 and latest bludit. 
 
 
 ### Run the container
