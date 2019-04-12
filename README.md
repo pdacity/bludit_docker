@@ -1,5 +1,5 @@
 # Bludit Docker Image (Alpine based)
-You can run Bludit as a Docker container. Image based in Alpine Linux 3.7, php 5.6 and latest bludit. 
+You can run Bludit as a Docker container. Image based in Alpine Linux 3.7, php 5.6 (with healthcheck) and latest bludit. The size of container only 32 MB !
 
 
 ### Run the container
@@ -48,3 +48,7 @@ volumes:
 networks:
   default:
 ```
+
+### Refs
+Bludit home - https://www.bludit.com/ (Edi Goetschel, tnx for the great work !)
+Original Blidit container - https://hub.docker.com/u/bludit (Centos + php7 based)
