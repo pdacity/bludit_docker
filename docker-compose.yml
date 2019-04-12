@@ -2,10 +2,13 @@ version: '2.4'
 
 services:
   bludit:
-    image: pdacity/bludit_docker
+    build: ./
+    container_name: bludit
     volumes:
       - html:/var/www           # Bludit home
-      - nginx:/etc/nginx        #Nginx config
+      - nginx:/etc/nginx        # Nginx config
+    ports:
+      - 8080:80
     restart: always
     cpu_shares: 50
     mem_limit: 64m
