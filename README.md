@@ -35,6 +35,8 @@ version: '2.4'
 services:
   bludit:
     image: pdacity/bludit_docker
+    ports:
+      - 8080:80
     volumes:
       - html:/var/www           # Bludit home dir
       - nginx:/etc/nginx        # Nginx config dir
