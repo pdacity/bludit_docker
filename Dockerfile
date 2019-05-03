@@ -5,8 +5,11 @@ MAINTAINER Dmitry Malinin <dmitry@malinin.com>
 ENV nginx_conf /etc/nginx/nginx.conf
 ENV php_conf /etc/php5/php.ini
 ENV fpm_conf /etc/php5/php-fpm.conf
+ENV bludit_url https://www.bludit.com/releases/bludit-3-8-1.zip
 
-RUN apk add --no-cache nginx php5-fpm php5-gd php5-json php5-dom php5-xml php5-zip supervisor unzip jq curl 
+
+#!# RUN apk add --no-cache nginx php5-fpm php5-gd php5-json php5-dom php5-xml php5-zip supervisor unzip jq curl 
+RUN apk add --no-cache nginx php5-fpm php5-gd php5-json php5-dom php5-xml php5-zip supervisor unzip curl 
 
 # Edit config files
 RUN sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" ${php_conf} && \
@@ -39,7 +42,8 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
 
 # Bludit installation
 RUN cd /tmp/ && \
-    curl -o /tmp/bludit.zip `curl --silent https://version.bludit.com | jq -r .stable.downloadLink` && \
+#!#    curl -o /tmp/bludit.zip `curl --silent https://version.bludit.com | jq -r .stable.downloadLink` && \
+    curl -o /tmp/bludit.zip ${bludit_url} && \
     unzip /tmp/bludit.zip && \
     rm -rf /var/www && \
     mv bludit-* /var/www && \
