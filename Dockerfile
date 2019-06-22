@@ -5,7 +5,7 @@ MAINTAINER Dmitry Malinin <dmitry@malinin.com>
 ENV nginx_conf /etc/nginx/nginx.conf
 ENV php_conf /etc/php5/php.ini
 ENV fpm_conf /etc/php5/php-fpm.conf
-ENV bludit_url https://www.bludit.com/releases/bludit-3-8-1.zip
+ENV bludit_url https://www.bludit.com/releases/bludit-3-9-2.zip
 
 RUN apk add --no-cache nginx php5-fpm php5-gd php5-json php5-dom php5-xml php5-zip supervisor unzip curl 
 
