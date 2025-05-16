@@ -54,5 +54,5 @@ networks:
 ### Refs
 - Bludit home - https://www.bludit.com/ (Edi Goetschel, tnx for the great work !)
 
-- Original Blidit container - https://hub.docker.com/u/bludit (Centos + php7 based)
+- Original Bludit container - https://hub.docker.com/u/bludit (Centos + php7 based)
 
